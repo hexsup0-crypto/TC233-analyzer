@@ -7,7 +7,7 @@ public static class DumpParser
 
     public static List<DumpBlock> Parse(string path)
     {
-        if (!File.Exists(path)) throw new FileNotFoundException($"Dump file not found: {path}");
+        if (!File.Exists(path)) throw new FileNotFoundException($"File not found - {path}");
         var data = File.ReadAllBytes(path);
         var name = Path.GetFileName(path);
         var blocks = new List<DumpBlock>();

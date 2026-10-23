@@ -1,4 +1,4 @@
-# Type mappings for TC233 dumps
+# Type mask for grouping TC233 dump blocks
 # Format: type_from_dump1 = type_from_dump2
 # Types are in hex format without 0x prefix
 # Comments start with #
