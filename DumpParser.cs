@@ -42,9 +42,12 @@ internal static class DumpParser
                 else
                 {
                     currentBlock.Add(value);
-                    if (currentBlock.Count >= 9 &&
+                    if (currentBlock.Count >= 11 &&
                         currentBlock[^5] == 0x50 &&
-                        currentBlock[^4] == 0x0a)
+                        currentBlock[^4] == 0x0a &&
+                        currentBlock[^3] == currentBlock[8] &&
+                        currentBlock[^2] == currentBlock[9] &&
+                        currentBlock[^1] == currentBlock[10])
                     {
                         var content = currentBlock.ToArray();
                         var type = content[^3..];

@@ -9,7 +9,7 @@ dotnet run -- dump1.bin dump2.bin output.txt
 ```
 
 The parser looks for blocks beginning with `65 af f5 f5` and ending at the next
-`50 0a XX XX XX` marker. The three bytes after `50 0a` are reported as the block
-type; bytes following that marker are not part of the block. Duplicate groups
+`50 0a XX XX XX` marker whose three-byte type matches the type at block offset 8.
+Bytes following that end marker are not part of the block. Duplicate groups
 contain every occurrence from each dump whose complete block contents match
 byte-for-byte.
