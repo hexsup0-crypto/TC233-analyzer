@@ -1,0 +1,11 @@
+# Type mappings for TC233 dumps
+# Format: type_from_dump1 = type_from_dump2
+# Types are in hex format without 0x prefix
+# Comments start with #
+
+# Example mappings
+55 5A 20 = 55 5A 20
+DE DE 08 = DE DE 08
+7B CC BB = 7B DD BB
+DA DA 14 = DA DA 15
+88 77 44 = 88 77 45
