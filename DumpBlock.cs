@@ -23,17 +23,4 @@ public sealed class DumpBlock
     public int Size => Data.Length;
 
     public string TypeText => TypeMapper.Format(Type);
-
-    public string ContentHex => BitConverter.ToString(Data).Replace('-', ' ').ToLowerInvariant();
-
-    /// <summary>Content with the type bytes (start and end markers) zeroed, for type-independent comparison.</summary>
-    public byte[] NormalizedData()
-    {
-        var copy = (byte[])Data.Clone();
-        for (int i = 0; i < TypeLength; i++) copy[TypeOffset + i] = 0;
-        int end = DumpParser.FindEndMarker(copy, Type);
-        if (end >= 0)
-            for (int i = 0; i < TypeLength; i++) copy[end + 2 + i] = 0;
-        return copy;
-    }
 }
